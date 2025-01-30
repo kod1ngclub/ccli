@@ -1,0 +1,4 @@
+#ifndef CCLI_PASSWORD_H
+#define CCLI_PASSWORD_H
+
+#endif // CCLI_PASSWORD_H
