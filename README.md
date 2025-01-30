@@ -4,7 +4,7 @@
 
 ## Concept
 
-- Easy
+- As easy as possible
 - Explicit
 - Single thread
 
