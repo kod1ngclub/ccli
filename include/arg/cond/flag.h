@@ -1,5 +1,5 @@
-#ifndef CCLI_COND_FLAG_H
-#define CCLI_COND_FLAG_H
+#ifndef CCLI_ARG_COND_FLAG_H
+#define CCLI_ARG_COND_FLAG_H
 
 #include "shared/str.h"
 
@@ -16,4 +16,4 @@ struct sflag {
     const char s;
 };
 
-#endif // CCLI_COND_FLAG_H
+#endif // CCLI_ARG_COND_FLAG_H

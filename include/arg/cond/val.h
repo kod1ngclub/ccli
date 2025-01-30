@@ -1,5 +1,5 @@
-#ifndef CCLI_COND_VAL_H
-#define CCLI_COND_VAL_H
+#ifndef CCLI_ARG_COND_VAL_H
+#define CCLI_ARG_COND_VAL_H
 
 #include "shared/uid.h"
 #include "shared/str.h"
@@ -28,4 +28,4 @@ struct val_url {
     const uid id;
 };
 
-#endif // CCLI_COND_VAL_H
+#endif // CCLI_ARG_COND_VAL_H

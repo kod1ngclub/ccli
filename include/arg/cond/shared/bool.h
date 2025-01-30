@@ -1,5 +1,5 @@
-#ifndef CCLI_COND_SHARED_BOOL_H
-#define CCLI_COND_SHARED_BOOL_H
+#ifndef CCLI_ARG_COND_SHARED_BOOL_H
+#define CCLI_ARG_COND_SHARED_BOOL_H
 
 #include "stdbool.h"
 
@@ -8,4 +8,4 @@
  * If stdbool changes, manually define 'bool' with 'typedef'
  */
 
-#endif // CCLI_COND_SHARED_BOOL_H
+#endif // CCLI_ARG_COND_SHARED_BOOL_H

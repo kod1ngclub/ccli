@@ -1,5 +1,5 @@
-#ifndef CCLI_COND_GROUP_H
-#define CCLI_COND_GROUP_H
+#ifndef CCLI_ARG_COND_GROUP_H
+#define CCLI_ARG_COND_GROUP_H
 
 #include "flag.h"
 #include "val.h"
@@ -45,4 +45,4 @@ struct group {
     const bool seq;
 };
 
-#endif // CCLI_COND_GROUP_H
+#endif // CCLI_ARG_COND_GROUP_H
