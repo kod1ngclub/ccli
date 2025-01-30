@@ -1,5 +1,5 @@
-#ifndef CCLI_ARG_COND_GROUP_H
-#define CCLI_ARG_COND_GROUP_H
+#ifndef CCLI_ARG_COND_CONDSET_H
+#define CCLI_ARG_COND_CONDSET_H
 
 #include "flag.h"
 #include "val.h"
@@ -37,12 +37,12 @@ struct cond {
     const enum cond_type type;
 };
 
-// ==== group
-struct group {
-    const cond* const nodes;
+// ==== condset
+struct condset {
+    const cond* const conds;
     const int size;
 
     const bool seq;
 };
 
-#endif // CCLI_ARG_COND_GROUP_H
+#endif // CCLI_ARG_COND_CONDSET_H
