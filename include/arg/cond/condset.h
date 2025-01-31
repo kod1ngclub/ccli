@@ -4,9 +4,6 @@
 #include "flag.h"
 #include "val.h"
 
-#include "shared/str.h"
-#include "shared/bool.h"
-
 // === cond
 enum cond_type {
     COND_TYPE_FLAG,
@@ -21,15 +18,15 @@ enum cond_type {
 };
 
 union cond_data {
-    const struct flag f;
-    const struct lflag lf;
-    const struct sflag sf;
-    const struct val_str vstr;
-    const struct val_char vchar;
-    const struct val_int vint;
-    const struct val_filepath vfile;
-    const struct val_dirpath vdir;
-    const struct val_url vurl;
+    const struct cond_flag flag;
+    const struct cond_long_flag lflag;
+    const struct cond_short_flag sflag;
+    const struct cond_val_str vstr;
+    const struct cond_val_char vchar;
+    const struct cond_val_int vint;
+    const struct cond_val_filepath vfile;
+    const struct cond_val_dirpath vdir;
+    const struct cond_val_url vurl;
 };
 
 struct cond {

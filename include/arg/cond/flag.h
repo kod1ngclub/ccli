@@ -1,19 +1,17 @@
 #ifndef CCLI_ARG_COND_FLAG_H
 #define CCLI_ARG_COND_FLAG_H
 
-#include "shared/str.h"
-
-struct flag {
-    const str l;
-    const char s;
+struct cond_long_flag {
+    const char* const data;
 };
 
-struct lflag {
-    const str l;
+struct cond_short_flag {
+    const char data;
 };
 
-struct sflag {
-    const char s;
+struct cond_flag {
+    const struct cond_long_flag lflag;
+    const struct cond_short_flag sflag;
 };
 
 #endif // CCLI_ARG_COND_FLAG_H
