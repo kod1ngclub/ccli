@@ -2,6 +2,8 @@
 #define CCLI_ARG_COND_H
 
 #include "cond/condset.h"
+#include "cond/flag.h"
+#include "cond/val.h"
 
 struct condset cset(const struct cond* const conds, const int size);
 struct condset cseq(const struct cond* const conds, const int size);

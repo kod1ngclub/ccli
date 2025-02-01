@@ -4,6 +4,8 @@
 #include "flag.h"
 #include "val.h"
 
+#include "stdbool.h"
+
 // === cond
 enum cond_type {
     COND_TYPE_FLAG,
@@ -36,7 +38,7 @@ struct cond {
 
 // ==== condset
 struct condset {
-    const cond* const conds;
+    const struct cond* const conds;
     const int size;
 
     const bool seq;
