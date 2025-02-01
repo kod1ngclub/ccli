@@ -40,7 +40,7 @@ typedef char* const out_password;
 // ==== API functions
 void password(
     const char* const message,
-    const password_conf conf,
+    const struct password_conf conf,
 
     const out_password* const out
 );

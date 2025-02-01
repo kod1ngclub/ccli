@@ -8,7 +8,7 @@ struct option {
 };
 
 struct optionset {
-    const option* const options;
+    const struct option* const options;
     const int size;
 };
 
@@ -49,7 +49,7 @@ static const struct select_conf SELECT_DEFAULT = {
 
 // ==== API functions
 unsigned long select(
-    const optionset optset,
+    const struct optionset optset,
     const struct select_conf conf
 );
 
