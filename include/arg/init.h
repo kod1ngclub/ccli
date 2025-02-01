@@ -8,7 +8,7 @@ struct stdarg {
     const int argc;
 };
 
-void init(const stdarg arg);
+void init(const struct stdarg arg);
 void free(void);
 
 #endif // CCLI_ARG_INIT_H
