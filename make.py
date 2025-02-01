@@ -59,7 +59,7 @@ def LogTable():
     sec_index       = Leftpad("stage level")
     sec_type        = Leftpad("type")
     sec_filename    = Leftpad("filepath")
-    
+
     print(f"{sec_modname}{sec_index}{sec_type}{sec_filename}")
     print("=" * LEFTPAD_SIZE * 4)
 
@@ -68,7 +68,7 @@ def LogFile(modname, index, filename):
     sec_index       = Leftpad(f"stage/{index}")
     sec_type        = Leftpad("file")
     sec_filename    = Leftpad(filename)
-    
+
     print(f"{sec_modname}{sec_index}{sec_type}{sec_filename}")
 
 def LogLib(modname, index, libname):
@@ -76,7 +76,7 @@ def LogLib(modname, index, libname):
     sec_index       = Leftpad(f"stage/{index}")
     sec_type        = Leftpad("lib")
     sec_libname     = Leftpad(libname)
-    
+
     print(f"{sec_modname}{sec_index}{sec_type}{sec_libname}")
 
 def Newline():
@@ -111,7 +111,7 @@ def BuildHead(mods: list[Mod]):
             lines = Uninclude(lines)
 
             out += EMPTY.join(lines)
-    
+
 
     with open(CONFIG_OUT_H, "w") as file:
         file.write("#ifndef" + SPACE + CONFIG_GUARD + NEWLINE)
@@ -119,10 +119,9 @@ def BuildHead(mods: list[Mod]):
 
         for libname in libnames:
             file.write("#include" + SPACE + "<" + libname + ">" + NEWLINE)
-        
+
         file.write(out + NEWLINE)
         file.write("#endif" + SPACE  + "//" + SPACE + CONFIG_GUARD + NEWLINE)
-    print(out)
 
 def BuildSrc(mods: list[Mod]):
     filepaths   = []
@@ -147,17 +146,16 @@ def BuildSrc(mods: list[Mod]):
             lines = Uninclude(lines)
 
             out += EMPTY.join(lines)
-    
 
-    with open(CONFIG_OUT_H, "w") as file:
+
+    with open(CONFIG_OUT_C, "w") as file:
         file.write("#include" + SPACE + QUOTE + CONFIG_OUT_H + QUOTE + NEWLINE)
         for libname in libnames:
             file.write("#include" + SPACE + "<" + libname + ">" + NEWLINE)
         file.write(out + NEWLINE)
-    print(out)
 
 # ==== heads
-mod0 = Mod([
+head0 = Mod([
     Stage([
         Head("include/arg/cond/flag.h"),
         Head("include/arg/cond/val.h")
@@ -167,44 +165,44 @@ mod0 = Mod([
     ])
 ], "arg/cond")
 
-mod1 = Mod([
+head1 = Mod([
     Stage([
         Head("include/arg/storage/flag.h"),
         Head("include/arg/storage/datatype.h")
     ])
 ], "arg/storage")
 
-mod2 = Mod([
+head2 = Mod([
     Stage([
         Head("include/arg/init.h")
     ])
 ], "arg/init")
 
-mod3 = Mod([
+head3 = Mod([
     Stage([
         Head("include/arg/cond.h")
     ])
 ], "arg/cond")
 
-mod4 = Mod([
+head4 = Mod([
     Stage([
         Head("include/arg/find.h")
     ])
 ], "arg/find")
 
-mod5 = Mod([
+head5 = Mod([
     Stage([
         Head("include/input.h")
     ]).dep("stdbool.h")
 ], "input")
 
-mod6 = Mod([
+head6 = Mod([
     Stage([
         Head("include/password.h")
     ])
 ], "password")
 
-mod7 = Mod([
+head7 = Mod([
     Stage([
         Head("include/select.h")
     ])
@@ -213,13 +211,26 @@ mod7 = Mod([
 # clear CLI
 os.system('cls' if os.name == 'nt' else 'clear')
 
+Newline()
 BuildHead([
-    mod0,
-    mod1,
-    mod2,
-    mod3,
-    mod4,
-    mod5,
-    mod6,
-    mod7
+    head0,
+    head1,
+    head2,
+    head3,
+    head4,
+    head5,
+    head6,
+    head7
+])
+
+# ==== src
+src0 = Mod([
+    Stage([
+        Src("src/arg/cond.c")
+    ])
+], "arg")
+
+Newline()
+BuildSrc([
+    src0
 ])
