@@ -1,12 +1,13 @@
 # ccli
 
-📗 Framework for CLI app with C
+📗 Framework for ANSI CLI app with C
 
 ## Concept
 
 - As easy as possible
 - Explicit
-- Single thread
+- Fast
+- Zero memory footprint
 
 ## Getting started
 
@@ -18,4 +19,3 @@ python3 make.py
 ## License
 
 ccli is under **GPL 3.0**
-
