@@ -3,27 +3,27 @@
 
 #include "stdbool.h"
 
-typedef bool    out_is_flag;
-typedef bool    out_is_long_flag;
-typedef bool    out_is_short_flag;
+typedef bool    out_catched_flag;
+typedef bool    out_catched_long_flag;
+typedef bool    out_catched_short_flag;
 
-struct cond_long_flag {
+struct expect_long_flag {
     const char* const lflag;
 
-    const out_is_long_flag* const out;
+    const out_catched_long_flag* const out;
 };
 
-struct cond_short_flag {
+struct expect_short_flag {
     const char sflag;
 
-    const out_is_short_flag* const out;
+    const out_catched_short_flag* const out;
 };
 
-struct cond_flag {
+struct expect_flag {
     const char* const lflag;
     const char sflag;
 
-    const out_is_flag* const out;
+    const out_catched_flag* const out;
 };
 
 #endif // CCLI_ARG_FLAG_H
