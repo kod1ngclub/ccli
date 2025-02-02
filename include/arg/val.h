@@ -1,5 +1,5 @@
-#ifndef CCLI_ARG_COND_VAL_H
-#define CCLI_ARG_COND_VAL_H
+#ifndef CCLI_ARG_VAL_H
+#define CCLI_ARG_VAL_H
 
 typedef char* const     out_val_str;
 typedef char            out_val_char;
@@ -38,4 +38,4 @@ struct cond_val_url {
     const out_val_url* const out;
 };
 
-#endif // CCLI_ARG_COND_VAL_H
+#endif // CCLI_ARG_VAL_H

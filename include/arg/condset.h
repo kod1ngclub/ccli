@@ -1,5 +1,5 @@
-#ifndef CCLI_ARG_COND_CONDSET_H
-#define CCLI_ARG_COND_CONDSET_H
+#ifndef CCLI_ARG_CONDSET_H
+#define CCLI_ARG_CONDSET_H
 
 #include "flag.h"
 #include "val.h"
@@ -43,4 +43,4 @@ struct condset {
     const bool seq;
 };
 
-#endif // CCLI_ARG_COND_CONDSET_H
+#endif // CCLI_ARG_CONDSET_H

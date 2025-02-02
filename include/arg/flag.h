@@ -1,5 +1,5 @@
-#ifndef CCLI_ARG_COND_FLAG_H
-#define CCLI_ARG_COND_FLAG_H
+#ifndef CCLI_ARG_FLAG_H
+#define CCLI_ARG_FLAG_H
 
 #include "stdbool.h"
 
@@ -26,4 +26,4 @@ struct cond_flag {
     const out_is_flag* const out;
 };
 
-#endif // CCLI_ARG_COND_FLAG_H
+#endif // CCLI_ARG_FLAG_H
