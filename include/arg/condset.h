@@ -37,10 +37,9 @@ struct cond {
 };
 
 // ==== condset
+static const int CONDSET_COND_SIZE = 8;
 struct condset {
-    const struct cond* const conds;
-    const int size;
-
+    const struct cond conds[CONDSET_COND_SIZE];
     const bool seq;
 };
 
