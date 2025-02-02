@@ -12,15 +12,15 @@ enum token_type {
 };
 
 union token_data {
-    const token_long_flag lf;
-    const token_short_flag sf;
-    const token_datatype_str dstr;
-    const token_datatype_int dint;
+    const struct token_long_flag lf;
+    const struct token_short_flag sf;
+    const struct token_datatype_str dstr;
+    const struct token_datatype_int dint;
 };
 
 struct token {
-    const token_data data;
-    const token_type type;
+    const union token_data data;
+    const enum token_type type;
 };
 
 #endif // CCLI_ARG_STORAGE_TOKEN_H

@@ -6,7 +6,7 @@
 #define STORAGE_NULL ((struct storage* const)0)
 
 struct storage {
-    const token* const tokens;
+    const struct token* const tokens;
     const int size;
     const int version;
 };
