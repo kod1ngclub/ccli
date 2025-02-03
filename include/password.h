@@ -38,7 +38,7 @@ static const struct password_conf PASSWORD_DEFAULT = {
 typedef char* const out_password;
 
 // ==== API functions
-void password(
+void read_password(
     const char* const message,
     const struct password_conf conf,
 

@@ -48,7 +48,7 @@ static const struct select_conf SELECT_DEFAULT = {
 };
 
 // ==== API functions
-unsigned long select(
+unsigned long read_select(
     const struct optionset optset,
     const struct select_conf conf
 );
