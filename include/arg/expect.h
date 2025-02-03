@@ -40,6 +40,7 @@ struct expect {
 static const int EXPECTSET_SIZE = 8;
 struct expectset {
     const struct expect expects[EXPECTSET_SIZE];
+    const int size;
     const bool seq;
 };
 
