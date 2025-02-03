@@ -138,8 +138,8 @@ bool expect_has(
 );
 
 // ==== util
-struct expectset cset(const struct expect* const conds, const int size);
-struct expectset cseq(const struct expect* const conds, const int size);
+struct expectset cset(const struct expect* const expects, const int size);
+struct expectset cseq(const struct expect* const expects, const int size);
 
 struct expect flag(
     const char* const l,
