@@ -157,56 +157,24 @@ def BuildSrc(mods: list[Mod]):
 # ==== heads
 head0 = Mod([
     Stage([
-        Head("include/arg/cond/flag.h"),
-        Head("include/arg/cond/val.h")
-    ]),
+        Head("include/arg/flag.h"),
+        Head("include/arg/val.h")
+    ]).dep("stdbool.h"),
     Stage([
-        Head("include/arg/cond/condset.h")
-    ])
-], "arg/cond")
+        Head("include/arg/expect.h")
+    ]).dep("stdbool.h"),
+    Stage([
+        Head("include/arg/api.h")
+    ]).dep("stdbool.h")
+], "arg")
 
 head1 = Mod([
     Stage([
-        Head("include/arg/storage/flag.h"),
-        Head("include/arg/storage/datatype.h")
-    ])
-], "arg/storage")
-
-head2 = Mod([
-    Stage([
-        Head("include/arg/init.h")
-    ])
-], "arg/init")
-
-head3 = Mod([
-    Stage([
-        Head("include/arg/cond.h")
-    ])
-], "arg/cond")
-
-head4 = Mod([
-    Stage([
-        Head("include/arg/find.h")
-    ])
-], "arg/find")
-
-head5 = Mod([
-    Stage([
-        Head("include/input.h")
+        Head("include/scan/password.h"),
+        Head("include/scan/select.h"),
+        Head("include/scan/val.h")
     ]).dep("stdbool.h")
-], "input")
-
-head6 = Mod([
-    Stage([
-        Head("include/password.h")
-    ])
-], "password")
-
-head7 = Mod([
-    Stage([
-        Head("include/select.h")
-    ])
-], "select")
+], "scan")
 
 # clear CLI
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -214,20 +182,14 @@ os.system('cls' if os.name == 'nt' else 'clear')
 Newline()
 BuildHead([
     head0,
-    head1,
-    head2,
-    head3,
-    head4,
-    head5,
-    head6,
-    head7
+    head1
 ])
 
 # ==== src
 src0 = Mod([
     Stage([
-        Src("src/arg/cond.c")
-    ])
+        Src("src/arg.c")
+    ]).dep("stdio.h").dep("stdlib.h").dep("string.h")
 ], "arg")
 
 Newline()
