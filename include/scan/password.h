@@ -1,5 +1,5 @@
-#ifndef CCLI_PASSWORD_H
-#define CCLI_PASSWORD_H
+#ifndef CCLI_SCAN_PASSWORD_H
+#define CCLI_SCAN_PASSWORD_H
 
 // ==== password config
 enum password_indentset {
@@ -45,4 +45,4 @@ void read_password(
     const out_password* const out
 );
 
-#endif // CCLI_PASSWORD_H
+#endif // CCLI_SCAN_PASSWORD_H

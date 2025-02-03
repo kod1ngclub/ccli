@@ -1,5 +1,5 @@
-#ifndef CCLI_SELECT_H
-#define CCLI_SELECT_H
+#ifndef CCLI_SCAN_SELECT_H
+#define CCLI_SCAN_SELECT_H
 
 // ==== option config
 struct option {
@@ -48,9 +48,9 @@ static const struct select_conf SELECT_DEFAULT = {
 };
 
 // ==== API functions
-unsigned long read_select(
+unsigned long scan_select(
     const struct optionset optset,
     const struct select_conf conf
 );
 
-#endif // CCLI_SELECT_H
+#endif // CCLI_SCAN_SELECT_H
