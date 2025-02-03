@@ -54,14 +54,20 @@ bool expect_eq1(
     const struct stdarg arg,
 
     const struct expectset s1
-);
+) {
+    const struct expectset sets[1] = { s1 };
+    return expect_eq(arg, sets, 1);
+}
 
 bool expect_eq2(
     const struct stdarg arg,
 
     const struct expectset s1,
     const struct expectset s2
-);
+) {
+    const struct expectset sets[2] = { s1, s2 };
+    return expect_eq(arg, sets, 2);
+}
 
 bool expect_eq3(
     const struct stdarg arg,
@@ -69,7 +75,10 @@ bool expect_eq3(
     const struct expectset s1,
     const struct expectset s2,
     const struct expectset s3
-);
+) {
+    const struct expectset sets[3] = { s1, s2, s3 };
+    return expect_eq(arg, sets, 3);
+}
 
 bool expect_eq4(
     const struct stdarg arg,
@@ -78,7 +87,10 @@ bool expect_eq4(
     const struct expectset s2,
     const struct expectset s3,
     const struct expectset s4
-);
+) {
+    const struct expectset sets[4] = { s1, s2, s3, s4 };
+    return expect_eq(arg, sets, 4);
+}
 
 bool expect_eq5(
     const struct stdarg arg,
@@ -88,7 +100,10 @@ bool expect_eq5(
     const struct expectset s3,
     const struct expectset s4,
     const struct expectset s5
-);
+) {
+    const struct expectset sets[5] = { s1, s2, s3, s4, s5 };
+    return expect_eq(arg, sets, 5);
+}
 
 bool expect_eq6(
     const struct stdarg arg,
@@ -99,7 +114,10 @@ bool expect_eq6(
     const struct expectset s4,
     const struct expectset s5,
     const struct expectset s6
-);
+) {
+    const struct expectset sets[6] = { s1, s2, s3, s4, s5, s6 };
+    return expect_eq(arg, sets, 6);
+}
 
 bool expect_eq7(
     const struct stdarg arg,
@@ -111,7 +129,10 @@ bool expect_eq7(
     const struct expectset s5,
     const struct expectset s6,
     const struct expectset s7
-);
+) {
+    const struct expectset sets[7] = { s1, s2, s3, s4, s5, s6, s7 };
+    return expect_eq(arg, sets, 7);
+}
 
 bool expect_eq8(
     const struct stdarg arg,
@@ -124,7 +145,10 @@ bool expect_eq8(
     const struct expectset s6,
     const struct expectset s7,
     const struct expectset s8
-);
+) {
+    const struct expectset sets[8] = { s1, s2, s3, s4, s5, s6, s7, s8 };
+    return expect_eq(arg, sets, 8);
+}
 
 bool expect_eq(
     const struct stdarg arg,
@@ -138,14 +162,20 @@ bool expect_has1(
     const struct stdarg arg,
 
     const struct expectset s1
-);
+) {
+    const struct expectset sets[1] = { s1 };
+    return expect_has(arg, sets, 1);
+}
 
 bool expect_has2(
     const struct stdarg arg,
 
     const struct expectset s1,
     const struct expectset s2
-);
+) {
+    const struct expectset sets[2] = { s1, s2 };
+    return expect_has(arg, sets, 2);
+}
 
 bool expect_has3(
     const struct stdarg arg,
@@ -153,7 +183,10 @@ bool expect_has3(
     const struct expectset s1,
     const struct expectset s2,
     const struct expectset s3
-);
+) {
+    const struct expectset sets[3] = { s1, s2, s3 };
+    return expect_has(arg, sets, 3);
+}
 
 bool expect_has4(
     const struct stdarg arg,
@@ -162,7 +195,10 @@ bool expect_has4(
     const struct expectset s2,
     const struct expectset s3,
     const struct expectset s4
-);
+) {
+    const struct expectset sets[4] = { s1, s2, s3, s4 };
+    return expect_has(arg, sets, 4);
+}
 
 bool expect_has(
     const struct stdarg arg,
