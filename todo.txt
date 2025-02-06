@@ -1,0 +1,8 @@
+[v] Implement cset1 ~ cset4
+[v] Implement cseq1 ~ cseq4
+[v] Move all implements of util functions of arg module
+    (from src/arg.c to src/arg/util.c)
+[ ] Move all implements of expect_eq and expect_has of arg modue
+    (from src/arg.c to src/arg/eq.c arc/arg/has.c)
+
+And implement expect_has and expect_eq
