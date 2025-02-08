@@ -1,5 +1,5 @@
-#ifndef CCLI_ARG_EXPECT_H
-#define CCLI_ARG_EXPECT_H
+#ifndef CCLI_ARG_MODEL_EXPECT_H
+#define CCLI_ARG_MODEL_EXPECT_H
 
 #include "flag.h"
 #include "val.h"
@@ -44,4 +44,4 @@ struct expectset {
     const bool seq;
 };
 
-#endif // CCLI_ARG_EXPECT_H
+#endif // CCLI_ARG_MODEL_EXPECT_H

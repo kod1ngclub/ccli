@@ -1,5 +1,5 @@
-#ifndef CCLI_ARG_FLAG_H
-#define CCLI_ARG_FLAG_H
+#ifndef CCLI_ARG_MODEL_FLAG_H
+#define CCLI_ARG_MODEL_FLAG_H
 
 #include "stdbool.h"
 
@@ -26,4 +26,4 @@ struct expect_flag {
     out_catched_flag* const out;
 };
 
-#endif // CCLI_ARG_FLAG_H
+#endif // CCLI_ARG_MODEL_FLAG_H

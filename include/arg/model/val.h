@@ -1,5 +1,5 @@
-#ifndef CCLI_ARG_VAL_H
-#define CCLI_ARG_VAL_H
+#ifndef CCLI_ARG_MODEL_VAL_H
+#define CCLI_ARG_MODEL_VAL_H
 
 typedef char* const     out_catched_val_str;
 typedef char            out_catched_val_char;
@@ -38,4 +38,4 @@ struct expect_val_url {
     out_catched_val_url* const out;
 };
 
-#endif // CCLI_ARG_VAL_H
+#endif // CCLI_ARG_MODEL_VAL_H

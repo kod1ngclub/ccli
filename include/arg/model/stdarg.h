@@ -1,5 +1,5 @@
-#ifndef CCLI_ARG_STDARG_H
-#define CCLI_ARG_STDARG_H
+#ifndef CCLI_ARG_MODEL_STDARG_H
+#define CCLI_ARG_MODEL_STDARG_H
 
 typedef char* const argword;
 
@@ -8,4 +8,4 @@ struct stdarg {
     const int argc;
 };
 
-#endif // CCLI_ARG_STDARG_H
+#endif // CCLI_ARG_MODEL_STDARG_H
