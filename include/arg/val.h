@@ -10,32 +10,32 @@ typedef char* const     out_catched_val_url;
 
 struct expect_val_str {
     const char* const name;
-    const out_catched_val_str* const out;
+    out_catched_val_str* const out;
 };
 
 struct expect_val_char {
     const char* const name;
-    const out_catched_val_char* const out;
+    out_catched_val_char* const out;
 };
 
 struct expect_val_int {
     const char* const name;
-    const out_catched_val_int* const out;
+    out_catched_val_int* const out;
 };
 
 struct expect_val_filepath {
     const char* const name;
-    const out_catched_val_filepath* const out;
+    out_catched_val_filepath* const out;
 };
 
 struct expect_val_dirpath {
     const char* const name;
-    const out_catched_val_dirpath* const out;
+    out_catched_val_dirpath* const out;
 };
 
 struct expect_val_url {
     const char* const name;
-    const out_catched_val_url* const out;
+    out_catched_val_url* const out;
 };
 
 #endif // CCLI_ARG_VAL_H
