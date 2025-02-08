@@ -6,6 +6,7 @@
 
 unsigned long selection(
     const struct selection_option* const opts,
-    const struct selection_config conf)
+    const struct selection_config conf
+);
 
 #endif // CCLI_SELECT_INDEX_H
