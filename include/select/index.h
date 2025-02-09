@@ -4,9 +4,9 @@
 #include "model/option.h"
 #include "model/style.h"
 
-unsigned long selection(
-    const struct selection_option* const opts,
-    const struct selection_config conf
+unsigned long select(
+    const struct select_option* const opts,
+    const struct select_style style
 );
 
 #endif // CCLI_SELECT_INDEX_H
