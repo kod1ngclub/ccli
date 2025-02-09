@@ -7,39 +7,39 @@
 #include "stdbool.h"
 
 // === expect
-enum expect_type {
-    EXPECT_TYPE_FLAG,
-    EXPECT_TYPE_LFLAG,
-    EXPECT_TYPE_SFLAG,
-    EXPECT_TYPE_VAL_STR,
-    EXPECT_TYPE_VAL_CHAR,
-    EXPECT_TYPE_VAL_INT,
-    EXPECT_TYPE_VAL_FILEPATH,
-    EXPECT_TYPE_VAL_DIRPATH,
-    EXPECT_TYPE_VAL_URL
+enum ccli_expect_type {
+    CCLI_EXPECT_TYPE_FLAG,
+    CCLI_EXPECT_TYPE_LFLAG,
+    CCLI_EXPECT_TYPE_SFLAG,
+    CCLI_EXPECT_TYPE_VAL_STR,
+    CCLI_EXPECT_TYPE_VAL_CHAR,
+    CCLI_EXPECT_TYPE_VAL_INT,
+    CCLI_EXPECT_TYPE_VAL_FILEPATH,
+    CCLI_EXPECT_TYPE_VAL_DIRPATH,
+    CCLI_EXPECT_TYPE_VAL_URL
 };
 
-union expect_data {
-    const struct expect_flag flag;
-    const struct expect_long_flag lflag;
-    const struct expect_short_flag sflag;
-    const struct expect_val_str vstr;
-    const struct expect_val_char vchar;
-    const struct expect_val_int vint;
-    const struct expect_val_filepath vfile;
-    const struct expect_val_dirpath vdir;
-    const struct expect_val_url vurl;
+union ccli_expect_data {
+    const struct ccli_expect_flag flag;
+    const struct ccli_expect_long_flag lflag;
+    const struct ccli_expect_short_flag sflag;
+    const struct ccli_expect_val_str vstr;
+    const struct ccli_expect_val_char vchar;
+    const struct ccli_expect_val_int vint;
+    const struct ccli_expect_val_filepath vfile;
+    const struct ccli_expect_val_dirpath vdir;
+    const struct ccli_expect_val_url vurl;
 };
 
-struct expect {
-    const union expect_data data;
-    const enum expect_type type;
+struct ccli_expect {
+    const union ccli_expect_data data;
+    const enum ccli_expect_type type;
 };
 
 // ==== expectset
-static const int EXPECTSET_SIZE = 8;
-struct expectset {
-    const struct expect expects[EXPECTSET_SIZE];
+static const int CCLI_EXPECTSET_SIZE = 8;
+struct ccli_expectset {
+    const struct ccli_expect expects[CCLI_EXPECTSET_SIZE];
     const int size;
     const bool seq;
 };

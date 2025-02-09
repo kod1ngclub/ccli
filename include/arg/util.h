@@ -8,187 +8,213 @@
 #include "stdbool.h"
 
 // ==== util of func expect_eq
-bool expect_eq1(
-    const struct stdarg arg,
+bool ccli_expect_eq1(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1
+    const struct ccli_expectset s1
 );
 
-bool expect_eq2(
-    const struct stdarg arg,
+bool ccli_expect_eq2(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2
 );
 
-bool expect_eq3(
-    const struct stdarg arg,
+bool ccli_expect_eq3(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2,
-    const struct expectset s3
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2,
+    const struct ccli_expectset s3
 );
 
-bool expect_eq4(
-    const struct stdarg arg,
+bool ccli_expect_eq4(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2,
-    const struct expectset s3,
-    const struct expectset s4
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2,
+    const struct ccli_expectset s3,
+    const struct ccli_expectset s4
 );
 
-bool expect_eq5(
-    const struct stdarg arg,
+bool ccli_expect_eq5(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2,
-    const struct expectset s3,
-    const struct expectset s4,
-    const struct expectset s5
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2,
+    const struct ccli_expectset s3,
+    const struct ccli_expectset s4,
+    const struct ccli_expectset s5
 );
 
-bool expect_eq6(
-    const struct stdarg arg,
+bool ccli_expect_eq6(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2,
-    const struct expectset s3,
-    const struct expectset s4,
-    const struct expectset s5,
-    const struct expectset s6
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2,
+    const struct ccli_expectset s3,
+    const struct ccli_expectset s4,
+    const struct ccli_expectset s5,
+    const struct ccli_expectset s6
 );
 
-bool expect_eq7(
-    const struct stdarg arg,
+bool ccli_expect_eq7(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2,
-    const struct expectset s3,
-    const struct expectset s4,
-    const struct expectset s5,
-    const struct expectset s6,
-    const struct expectset s7
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2,
+    const struct ccli_expectset s3,
+    const struct ccli_expectset s4,
+    const struct ccli_expectset s5,
+    const struct ccli_expectset s6,
+    const struct ccli_expectset s7
 );
 
-bool expect_eq8(
-    const struct stdarg arg,
+bool ccli_expect_eq8(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2,
-    const struct expectset s3,
-    const struct expectset s4,
-    const struct expectset s5,
-    const struct expectset s6,
-    const struct expectset s7,
-    const struct expectset s8
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2,
+    const struct ccli_expectset s3,
+    const struct ccli_expectset s4,
+    const struct ccli_expectset s5,
+    const struct ccli_expectset s6,
+    const struct ccli_expectset s7,
+    const struct ccli_expectset s8
 );
 
 // ==== utils of func expect_has
-bool expect_has1(
-    const struct stdarg arg,
+bool ccli_expect_has1(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1
+    const struct ccli_expectset s1
 );
 
-bool expect_has2(
-    const struct stdarg arg,
+bool ccli_expect_has2(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2
 );
 
-bool expect_has3(
-    const struct stdarg arg,
+bool ccli_expect_has3(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2,
-    const struct expectset s3
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2,
+    const struct ccli_expectset s3
 );
 
-bool expect_has4(
-    const struct stdarg arg,
+bool ccli_expect_has4(
+    const struct ccli_stdarg arg,
 
-    const struct expectset s1,
-    const struct expectset s2,
-    const struct expectset s3,
-    const struct expectset s4
+    const struct ccli_expectset s1,
+    const struct ccli_expectset s2,
+    const struct ccli_expectset s3,
+    const struct ccli_expectset s4
 );
 
 // ==== utils for set
-struct expectset cset(const struct expect* const expects, const int size);
-
-struct expectset cset1(
-    const struct expect e1
+struct ccli_expectset cset(
+    const struct ccli_expect* const expects,
+    const int size
 );
 
-struct expectset cset2(
-    const struct expect e1,
-    const struct expect e2
+struct ccli_expectset cset1(
+    const struct ccli_expect e1
 );
 
-struct expectset cset3(
-    const struct expect e1,
-    const struct expect e2,
-    const struct expect e3
+struct ccli_expectset cset2(
+    const struct ccli_expect e1,
+    const struct ccli_expect e2
 );
 
-struct expectset cset4(
-    const struct expect e1,
-    const struct expect e2,
-    const struct expect e3,
-    const struct expect e4
+struct ccli_expectset cset3(
+    const struct ccli_expect e1,
+    const struct ccli_expect e2,
+    const struct ccli_expect e3
+);
+
+struct ccli_expectset cset4(
+    const struct ccli_expect e1,
+    const struct ccli_expect e2,
+    const struct ccli_expect e3,
+    const struct ccli_expect e4
 );
 
 // ==== utils for seq
-struct expectset cseq(const struct expect* const expects, const int size);
+struct ccli_expectset cseq(const struct ccli_expect* const expects, const int size);
 
-struct expectset cseq1(
-    const struct expect e1
+struct ccli_expectset cseq1(
+    const struct ccli_expect e1
 );
 
-struct expectset cseq2(
-    const struct expect e1,
-    const struct expect e2
+struct ccli_expectset cseq2(
+    const struct ccli_expect e1,
+    const struct ccli_expect e2
 );
 
-struct expectset cseq3(
-    const struct expect e1,
-    const struct expect e2,
-    const struct expect e3
+struct ccli_expectset cseq3(
+    const struct ccli_expect e1,
+    const struct ccli_expect e2,
+    const struct ccli_expect e3
 );
 
-struct expectset cseq4(
-    const struct expect e1,
-    const struct expect e2,
-    const struct expect e3,
-    const struct expect e4
+struct ccli_expectset cseq4(
+    const struct ccli_expect e1,
+    const struct ccli_expect e2,
+    const struct ccli_expect e3,
+    const struct ccli_expect e4
 );
 
 // ==== utils for flag
-struct expect flag(
+struct ccli_expect flag(
     const char* const l,
     const char s,
-    const out_catched_flag* const out
+    const ccli_out_flag* const out
 );
 
-struct expect lflag(
+struct ccli_expect lflag(
     const char* const l,
-    const out_catched_long_flag* const out
+    const ccli_out_long_flag* const out
 );
 
-struct expect sflag(
+struct ccli_expect sflag(
     const char s,
-    const out_catched_short_flag* const out
+    const ccli_out_short_flag* const out
 );
 
 
 // ==== utils for val
-struct expect vstr(const char* const name, const out_catched_val_str* const out);
-struct expect vchar(const char* const name, const out_catched_val_char* const out);
-struct expect vint(const char* const name, const out_catched_val_int* const out);
-struct expect vfile(const char* const name, const out_catched_val_filepath* const out);
-struct expect vdir(const char* const name, const out_catched_val_dirpath* const out);
-struct expect vurl(const char* const name, const out_catched_val_url* const out);
+struct ccli_expect vstr(
+    const char* const name,
+    const ccli_out_val_str* const out
+);
+
+struct ccli_expect vchar(
+    const char* const name,
+    const ccli_out_val_char* const out
+);
+
+struct ccli_expect vint(
+    const char* const name,
+    const ccli_out_val_int* const out
+);
+
+struct ccli_expect vfile(
+    const char* const name,
+    const ccli_out_val_filepath* const out
+);
+
+struct ccli_expect vdir(
+    const char* const name,
+    const ccli_out_val_dirpath* const out
+);
+
+struct ccli_expect vurl(
+    const char* const name,
+    const ccli_out_val_url* const out
+);
 
 #endif // CCLI_ARG_UTIL_H

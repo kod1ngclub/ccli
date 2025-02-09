@@ -4,10 +4,10 @@
 #include "model/expect.h"
 #include "model/stdarg.h"
 
-bool expect_has(
-    const struct stdarg arg,
+bool ccli_expect_has(
+    const struct ccli_stdarg arg,
 
-    const struct expectset* const sets,
+    const struct ccli_expectset* const sets,
     const int size
 );
 

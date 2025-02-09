@@ -1,31 +1,31 @@
 #ifndef CCLI_SELECT_MODEL_STYLE_H
 #define CCLI_SELECT_MODEL_STYLE_H
 
-enum select_indent_style {
-    SELECT_INDENT_STYLE_SPACE01,
-    SELECT_INDENT_STYLE_SPACE02,
-    SELECT_INDENT_STYLE_SPACE03,
-    SELECT_INDENT_STYLE_SPACE04,
-    SELECT_INDENT_STYLE_TAB01
+enum ccli_select_indent_style {
+    CCLI_SELECT_INDENT_STYLE_SPACE01,
+    CCLI_SELECT_INDENT_STYLE_SPACE02,
+    CCLI_SELECT_INDENT_STYLE_SPACE03,
+    CCLI_SELECT_INDENT_STYLE_SPACE04,
+    CCLI_SELECT_INDENT_STYLE_TAB01
 };
 
-enum select_color_style {
-    SELECT_COLOR_STYLE_NONE,
-    SELECT_COLOR_STYLE_RED,
-    SELECT_COLOR_STYLE_BLUE
+enum ccli_select_color_style {
+    CCLI_SELECT_COLOR_STYLE_NONE,
+    CCLI_SELECT_COLOR_STYLE_RED,
+    CCLI_SELECT_COLOR_STYLE_BLUE
 };
 
-enum select_deco_style {
-    SELECT_DECO_STYLE_NONE,
-    SELECT_DECO_STYLE_UNDERLINE,
-    SELECT_DECO_STYLE_BOLD
+enum ccli_select_deco_style {
+    CCLI_SELECT_DECO_STYLE_NONE,
+    CCLI_SELECT_DECO_STYLE_UNDERLINE,
+    CCLI_SELECT_DECO_STYLE_BOLD
 };
 
-struct select_style {
+struct ccli_select_style {
     const char prefix;
-    const enum select_indent_style indent;
-    const enum select_color_style color;
-    const enum select_deco_style deco;
+    const enum ccli_select_indent_style indent;
+    const enum ccli_select_color_style color;
+    const enum ccli_select_deco_style deco;
 };
 
 #endif // CCLI_SELECT_MODEL_STYLE_H
