@@ -2,16 +2,8 @@
 #define CCLI_SELECT_UTIL_H
 
 #include "model/option.h"
-#include "model/style.h"
 
 // ==== utils of func select
-static const struct ccli_select_style SELECT_DEFAULT_STYLE = {
-    .prefix     = '>',
-    .indent     = CCLI_SELECT_INDENT_STYLE_SPACE01,
-    .color      = CCLI_SELECT_COLOR_STYLE_BLUE,
-    .deco       = CCLI_SELECT_DECO_STYLE_NONE
-};
-
 unsigned long ccli_select1(
     const struct ccli_select_option opt1
 );
