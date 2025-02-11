@@ -4,9 +4,8 @@
 
 ## Concept
 
-- As easy as possible
 - Explicit
-- Fast
+- Zero config
 - Zero memory footprint
 
 ## Getting started
@@ -26,7 +25,7 @@ python3 make.py
 
 ---
 
-- Coding standtard if [howc][howclink]
+- Coding standtard is [howc][howclink]
 - You HEAD for your commit
   - FEAT
   - FIX
