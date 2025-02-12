@@ -202,19 +202,4 @@ struct ccli_expect vint(
     const ccli_out_val_int* const out
 );
 
-struct ccli_expect vfile(
-    const char* const name,
-    const ccli_out_val_filepath* const out
-);
-
-struct ccli_expect vdir(
-    const char* const name,
-    const ccli_out_val_dirpath* const out
-);
-
-struct ccli_expect vurl(
-    const char* const name,
-    const ccli_out_val_url* const out
-);
-
 #endif // CCLI_ARG_UTIL_H

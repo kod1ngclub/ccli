@@ -13,10 +13,7 @@ enum ccli_expect_type {
     CCLI_EXPECT_TYPE_SFLAG,
     CCLI_EXPECT_TYPE_VAL_STR,
     CCLI_EXPECT_TYPE_VAL_CHAR,
-    CCLI_EXPECT_TYPE_VAL_INT,
-    CCLI_EXPECT_TYPE_VAL_FILEPATH,
-    CCLI_EXPECT_TYPE_VAL_DIRPATH,
-    CCLI_EXPECT_TYPE_VAL_URL
+    CCLI_EXPECT_TYPE_VAL_INT
 };
 
 union ccli_expect_data {
@@ -26,9 +23,6 @@ union ccli_expect_data {
     const struct ccli_expect_val_str vstr;
     const struct ccli_expect_val_char vchar;
     const struct ccli_expect_val_int vint;
-    const struct ccli_expect_val_filepath vfile;
-    const struct ccli_expect_val_dirpath vdir;
-    const struct ccli_expect_val_url vurl;
 };
 
 struct ccli_expect {
