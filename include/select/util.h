@@ -5,21 +5,29 @@
 
 // ==== utils of func select
 unsigned long ccli_select1(
+    const char* const message,
+
     const struct ccli_select_option opt1
 );
 
 unsigned long ccli_select2(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2
 );
 
 unsigned long ccli_select3(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3
 );
 
 unsigned long ccli_select4(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -27,6 +35,8 @@ unsigned long ccli_select4(
 );
 
 unsigned long ccli_select5(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -35,6 +45,8 @@ unsigned long ccli_select5(
 );
 
 unsigned long ccli_select6(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -44,6 +56,8 @@ unsigned long ccli_select6(
 );
 
 unsigned long ccli_select7(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -54,6 +68,8 @@ unsigned long ccli_select7(
 );
 
 unsigned long ccli_select8(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -65,6 +81,8 @@ unsigned long ccli_select8(
 );
 
 unsigned long ccli_select9(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -77,6 +95,8 @@ unsigned long ccli_select9(
 );
 
 unsigned long ccli_select10(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -90,6 +110,8 @@ unsigned long ccli_select10(
 );
 
 unsigned long ccli_select11(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -104,6 +126,8 @@ unsigned long ccli_select11(
 );
 
 unsigned long ccli_select12(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -119,6 +143,8 @@ unsigned long ccli_select12(
 );
 
 unsigned long ccli_select13(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -135,6 +161,8 @@ unsigned long ccli_select13(
 );
 
 unsigned long ccli_select14(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -152,6 +180,8 @@ unsigned long ccli_select14(
 );
 
 unsigned long ccli_select15(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
@@ -170,6 +200,8 @@ unsigned long ccli_select15(
 );
 
 unsigned long ccli_select16(
+    const char* const message,
+
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,

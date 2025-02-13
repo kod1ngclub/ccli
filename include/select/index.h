@@ -4,6 +4,7 @@
 #include "model/option.h"
 
 unsigned long ccli_select(
+    const char* const message,
     const struct ccli_select_option* const opts,
     const int size
 );
