@@ -7,37 +7,37 @@
 bool ccli_input_str8(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 );
 
 bool ccli_input_str16(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 );
 
 bool ccli_input_str32(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 );
 
 bool ccli_input_str64(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 );
 
 bool ccli_input_str128(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 );
 
 bool ccli_input_str70(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 );
 
 #endif // CCLI_INPUT_CHAR_H
