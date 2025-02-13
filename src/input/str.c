@@ -12,7 +12,7 @@ void ccli_input_str(
     const char* const message,
 
     char* const out,
-    const int size
+    const size_t size
 ) {
     if (message == NULL) {
         printf("[ccli] ==== ERROR\n");
@@ -32,9 +32,9 @@ void ccli_input_str(
         exit(-1);
     }
 
-    if (size <= 0) {
+    if (size == 0) {
         printf("[ccli] ==== ERROR\n");
-        printf("[ccli] Parameter 'size' cannot be 0 or lessor");
+        printf("[ccli] Parameter 'size' cannot be 0");
         printf("[ccli] - funcname: ccli_input_str()\n");
         printf("[ccli] - filename: %s\n", __FILE__);
         printf("[ccli] - line: %d\n", __LINE__);

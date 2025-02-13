@@ -1,11 +1,13 @@
 #ifndef CCLI_ARG_MODEL_VAL_H
 #define CCLI_ARG_MODEL_VAL_H
 
+#include "stddef.h"
+
 struct ccli_expect_val_str {
     const char* const name;
 
     char* const out;
-    const int size;
+    const size_t size;
 };
 
 struct ccli_expect_val_char {

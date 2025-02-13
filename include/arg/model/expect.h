@@ -4,6 +4,7 @@
 #include "flag.h"
 #include "val.h"
 
+#include "stddef.h"
 #include "stdbool.h"
 
 // === expect
@@ -34,7 +35,8 @@ struct ccli_expect {
 static const int CCLI_EXPECTSET_SIZE = 8;
 struct ccli_expectset {
     const struct ccli_expect expects[CCLI_EXPECTSET_SIZE];
-    const int size;
+    const size_t size;
+
     const bool seq;
 };
 

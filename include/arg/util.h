@@ -6,6 +6,7 @@
 #include "model/flag.h"
 
 #include "stdbool.h"
+#include "stddef.h"
 
 // ==== util of func expect_eq
 bool ccli_expect_eq1(
@@ -171,35 +172,66 @@ struct ccli_expectset cseq4(
 // ==== utils for flag
 struct ccli_expect flag(
     const char* const l,
-    const char s,
-    const ccli_out_flag* const out
+    const char s
 );
 
 struct ccli_expect lflag(
-    const char* const l,
-    const ccli_out_long_flag* const out
+    const char* const l
 );
 
 struct ccli_expect sflag(
-    const char s,
-    const ccli_out_short_flag* const out
+    const char s
 );
 
 
 // ==== utils for val
 struct ccli_expect vstr(
     const char* const name,
-    const ccli_out_val_str* const out
+
+    char* const out,
+    const size_t size
+);
+
+struct ccli_expect vstr16(
+    const char* const name,
+
+    char* const out
+);
+
+struct ccli_expect vstr32(
+    const char* const name,
+
+    char* const out
+);
+
+struct ccli_expect vstr64(
+    const char* const name,
+
+    char* const out
+);
+
+struct ccli_expect vstr128(
+    const char* const name,
+
+    char* const out
+);
+
+struct ccli_expect vstr70(
+    const char* const name,
+
+    char* const out
 );
 
 struct ccli_expect vchar(
     const char* const name,
-    const ccli_out_val_char* const out
+
+    char* const out
 );
 
 struct ccli_expect vint(
     const char* const name,
-    const ccli_out_val_int* const out
+
+    int* const out
 );
 
 #endif // CCLI_ARG_UTIL_H

@@ -4,11 +4,13 @@
 #include "model/expect.h"
 #include "model/stdarg.h"
 
+#include "stddef.h"
+
 bool ccli_expect_has(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset* const sets,
-    const int size
+    const size_t size
 );
 
 #endif // CCLI_ARG_HAS_H
