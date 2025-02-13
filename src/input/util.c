@@ -5,108 +5,156 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-bool ccli_input_str8(
+void ccli_input_str8(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 ) {
     if (message == NULL) {
-        printf("[ccli] parameter 'message' of ccli_input_str8() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'message' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str8()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     if (out == NULL) {
-        printf("[ccli] parameter 'out' of ccli_input_str8() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'out' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str8()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     return ccli_input_str(message, out, 8);
 }
 
-bool ccli_input_str16(
+void ccli_input_str16(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 ) {
     if (message == NULL) {
-        printf("[ccli] parameter 'message' of ccli_input_str16() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'message' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str16()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     if (out == NULL) {
-        printf("[ccli] parameter 'out' of ccli_input_str16() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'out' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str16()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     return ccli_input_str(message, out, 16);
 }
 
-bool ccli_input_str32(
+void ccli_input_str32(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 ) {
     if (message == NULL) {
-        printf("[ccli] parameter 'message' of ccli_input_str32() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'message' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str32()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     if (out == NULL) {
-        printf("[ccli] parameter 'out' of ccli_input_str32() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'out' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str32()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     return ccli_input_str(message, out, 32);
 }
 
-bool ccli_input_str64(
+void ccli_input_str64(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 ) {
     if (message == NULL) {
-        printf("[ccli] parameter 'message' of ccli_input_str32() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'message' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str64()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     if (out == NULL) {
-        printf("[ccli] parameter 'out' of ccli_input_str32() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'out' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str64()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
-    return ccli_input_str(message, out, 32);
+    return ccli_input_str(message, out, 64);
 }
 
-bool ccli_input_str128(
+void ccli_input_str128(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 ) {
     if (message == NULL) {
-        printf("[ccli] parameter 'message' of ccli_input_str128() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'message' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str128()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     if (out == NULL) {
-        printf("[ccli] parameter 'out' of ccli_input_str128() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'out' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str128()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     return ccli_input_str(message, out, 128);
 }
 
-bool ccli_input_str70(
+void ccli_input_str70(
     const char* const message,
 
-    ccli_out_input_str* const out
+    char* const out
 ) {
     if (message == NULL) {
-        printf("[ccli] parameter 'message' of ccli_input_str70() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'message' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str70()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
     if (out == NULL) {
-        printf("[ccli] parameter 'out' of ccli_input_str70() cannot be NULL");
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'out' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_input_str70()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
         exit(-1);
     }
 
