@@ -4,37 +4,37 @@
 #include "str.h"
 
 // ==== utils of ccli_input_str()
-bool ccli_input_str8(
+void ccli_input_str8(
     const char* const message,
 
     char* const out
 );
 
-bool ccli_input_str16(
+void ccli_input_str16(
     const char* const message,
 
     char* const out
 );
 
-bool ccli_input_str32(
+void ccli_input_str32(
     const char* const message,
 
     char* const out
 );
 
-bool ccli_input_str64(
+void ccli_input_str64(
     const char* const message,
 
     char* const out
 );
 
-bool ccli_input_str128(
+void ccli_input_str128(
     const char* const message,
 
     char* const out
 );
 
-bool ccli_input_str70(
+void ccli_input_str70(
     const char* const message,
 
     char* const out
