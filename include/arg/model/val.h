@@ -22,5 +22,4 @@ struct ccli_expect_val_int {
     int* const out;
 };
 
-
 #endif // CCLI_ARG_MODEL_VAL_H

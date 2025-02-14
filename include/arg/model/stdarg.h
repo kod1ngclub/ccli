@@ -3,10 +3,16 @@
 
 #include "stddef.h"
 
-typedef char* const argw;
 struct ccli_stdarg {
-    const argw* argv;
-    const size_t argc;
+    const char** argv;
+    const int argc;
 };
+
+/*
+ * ==== Why not using typedef for argword
+ * To keep original form of argument values
+ *
+ * int main(char** argv, int argc) { ... }
+ */
 
 #endif // CCLI_ARG_MODEL_STDARG_H

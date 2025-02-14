@@ -5,10 +5,10 @@
 #include "stdbool.h"
 
 enum __ccli_select_key__ {
-    CCLI_SELECT_KEY_NONE,
-    CCLI_SELECT_KEY_J,
-    CCLI_SELECT_KEY_K,
-    CCLI_SELECT_KEY_RETURN
+    __CCLI_SELECT_KEY_NONE__,
+    __CCLI_SELECT_KEY_J__,
+    __CCLI_SELECT_KEY_K__,
+    __CCLI_SELECT_KEY_RETURN__
 };
 
 #ifdef _WIN32
@@ -16,23 +16,23 @@ enum __ccli_select_key__ {
 #include <conio.h>
 // <conio.h> has getch()
 
-#define CCLI_SELECT_KEY_ASCII_J        (106)
-#define CCLI_SELECT_KEY_ASCII_K        (107)
-#define CCLI_SELECT_KEY_ASCII_RETURN   (13)
+#define __CCLI_SELECT_KEY_ASCII_J__         (106)
+#define __CCLI_SELECT_KEY_ASCII_K__         (107)
+#define __CCLI_SELECT_KEY_ASCII_RETURN__    (13)
 
 enum __ccli_select_key__ __ccli_select_getch__() {
     int ch = getch();
 
     switch (ch) {
-        case CCLI_SELECT_KEY_ASCII_J:
-            return CCLI_SELECT_KEY_J;
-        case CCLI_SELECT_KEY_ASCII_K:
-            return CCLI_SELECT_KEY_K;
-        case CCLI_SELECT_KEY_ASCII_RETURN:
-            return CCLI_SELECT_KEY_RETURN;
+        case __CCLI_SELECT_KEY_ASCII_J__:
+            return __CCLI_SELECT_KEY_J__;
+        case __CCLI_SELECT_KEY_ASCII_K__:
+            return __CCLI_SELECT_KEY_K__;
+        case __CCLI_SELECT_KEY_ASCII_RETURN__:
+            return __CCLI_SELECT_KEY_RETURN__;
     }
 
-    return CCLI_SELECT_KEY_NONE;
+    return __CCLI_SELECT_KEY_NONE__;
 }
 
 
@@ -44,18 +44,18 @@ static void __ccli_select_clear_line__(int n) {
     fflush(stdout);
 }
 
-#undef CCLI_SELECT_KEY_ASCII_J
-#undef CCLI_SELECT_KEY_ASCII_K
-#undef CCLI_SELECT_KEY_ASCII_RETURN
+#undef __CCLI_SELECT_KEY_ASCII_J__
+#undef __CCLI_SELECT_KEY_ASCII_K__
+#undef __CCLI_SELECT_KEY_ASCII_RETURN__
 
 #else
 
 #include <termios.h>
 #include <unistd.h>
 
-#define CCLI_SELECT_KEY_ASCII_J        (106)
-#define CCLI_SELECT_KEY_ASCII_K        (107)
-#define CCLI_SELECT_KEY_ASCII_RETURN   (10)
+#define __CCLI_SELECT_KEY_ASCII_J__         (106)
+#define __CCLI_SELECT_KEY_ASCII_K__         (107)
+#define __CCLI_SELECT_KEY_ASCII_RETURN__    (10)
 
 int __ccli_select_getch__(void) {
     struct termios oldt, newt;
@@ -75,15 +75,15 @@ int __ccli_select_getch__(void) {
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 
     switch (ch) {
-        case CCLI_SELECT_KEY_ASCII_J:
-            return CCLI_SELECT_KEY_J;
-        case CCLI_SELECT_KEY_ASCII_K:
-            return CCLI_SELECT_KEY_K;
-        case CCLI_SELECT_KEY_ASCII_RETURN:
-            return CCLI_SELECT_KEY_RETURN;
+        case __CCLI_SELECT_KEY_ASCII_J__:
+            return __CCLI_SELECT_KEY_J__;
+        case __CCLI_SELECT_KEY_ASCII_K__:
+            return __CCLI_SELECT_KEY_K__;
+        case __CCLI_SELECT_KEY_ASCII_RETURN__:
+            return __CCLI_SELECT_KEY_RETURN__;
     }
 
-    return CCLI_SELECT_KEY_NONE;
+    return __CCLI_SELECT_KEY_NONE__;
 }
 
 
@@ -95,9 +95,9 @@ static void __ccli_select_clear_line__(int n) {
     fflush(stdout);
 }
 
-#undef CCLI_SELECT_KEY_ASCII_J
-#undef CCLI_SELECT_KEY_ASCII_K
-#undef CCLI_SELECT_KEY_ASCII_RETURN
+#undef __CCLI_SELECT_KEY_ASCII_J__
+#undef __CCLI_SELECT_KEY_ASCII_K__
+#undef __CCLI_SELECT_KEY_ASCII_RETURN__
 
 #endif
 
@@ -125,28 +125,28 @@ unsigned long ccli_select(
     int at = 0;
     __ccli_select_print__(at, opts, size);
 
-    const int SELECT_MIN = 0;
-    const int SELECT_MAX = (size-1);
+    const int select_index_min = 0;
+    const int select_index_max = (size-1);
 
     while (true) {
         switch (__ccli_select_getch__()) {
-            case CCLI_SELECT_KEY_J:
-                if (at == SELECT_MAX) {
-                    at = SELECT_MIN;
+            case __CCLI_SELECT_KEY_J__:
+                if (at == select_index_max) {
+                    at = select_index_min;
                 } else {
                     at++;
                 }
                 break;
-            case CCLI_SELECT_KEY_K:
-                if (at == SELECT_MIN) {
-                    at = SELECT_MAX;
+            case __CCLI_SELECT_KEY_K__:
+                if (at == select_index_min) {
+                    at = select_index_max;
                 } else {
                     at--;
                 }
                 break;
-            case CCLI_SELECT_KEY_RETURN:
+            case __CCLI_SELECT_KEY_RETURN__:
                 return opts[at].id;
-            case CCLI_SELECT_KEY_NONE:
+            case __CCLI_SELECT_KEY_NONE__:
                 continue;
         }
 
