@@ -28,7 +28,7 @@ int ccli_input_str(
     printf("%s\n", message);
     printf("> ");
 
-    char buffer[CCLI_INPUT_STR_BUFFER_SIZE];
+    char buffer[size];
     char* fgetbuf = fgets(buffer, sizeof(buffer), stdin);
 
     if (fgetbuf == NULL) return CCLI_INPUT_STR_ERROR_FAILED_TO_FGETS_BUFFER_FROM_STDIN;
