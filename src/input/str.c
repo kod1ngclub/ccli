@@ -4,42 +4,26 @@
 #include "stdlib.h"
 #include "string.h"
 
+static const int CCLI_INPUT_STR_ERROR_NONE                                 = 0;
+static const int CCLI_INPUT_STR_ERROR_PARAMETER_MESSAGE_NULL               = 1;
+static const int CCLI_INPUT_STR_ERROR_PARAMETER_OUT_NULL                   = 2;
+static const int CCLI_INPUT_STR_ERROR_PARAMETER_SIZE_ZERO                  = 3;
+static const int CCLI_INPUT_STR_ERROR_FAILED_TO_FGETS_BUFFER_FROM_STDIN    = 4;
+
+
 static const char CCLI_INPUT_STR_NEWLINE_CHAR = '\n';
 static const char* const CCLI_INPUT_STR_NEWLINE_STR = "\n";
 static const char CCLI_INPUT_STR_ENDLINE_CHAR = '\0';
 
-void ccli_input_str(
+int ccli_input_str(
     const char* const message,
 
     char* const out,
     const size_t size
 ) {
-    if (message == NULL) {
-        printf("[ccli] ==== ERROR\n");
-        printf("[ccli] Parameter 'message' cannot be NULL\n");
-        printf("[ccli] - funcname: ccli_input_str()\n");
-        printf("[ccli] - filename: %s\n", __FILE__);
-        printf("[ccli] - line: %d\n", __LINE__);
-        exit(-1);
-    }
-
-    if (out == NULL) {
-        printf("[ccli] ==== ERROR\n");
-        printf("[ccli] Parameter 'out' cannot be NULL\n");
-        printf("[ccli] - funcname: ccli_input_str()\n");
-        printf("[ccli] - filename: %s\n", __FILE__);
-        printf("[ccli] - line: %d\n", __LINE__);
-        exit(-1);
-    }
-
-    if (size == 0) {
-        printf("[ccli] ==== ERROR\n");
-        printf("[ccli] Parameter 'size' cannot be 0");
-        printf("[ccli] - funcname: ccli_input_str()\n");
-        printf("[ccli] - filename: %s\n", __FILE__);
-        printf("[ccli] - line: %d\n", __LINE__);
-        exit(-1);
-    }
+    if (message == NULL) return CCLI_INPUT_STR_ERROR_PARAMETER_MESSAGE_NULL;
+    if (out == NULL) return CCLI_INPUT_STR_ERROR_PARAMETER_OUT_NULL;
+    if (size == 0) return CCLI_INPUT_STR_ERROR_PARAMETER_SIZE_ZERO;
 
     printf("%s\n", message);
     printf("> ");
@@ -47,25 +31,17 @@ void ccli_input_str(
     char buffer[CCLI_INPUT_STR_BUFFER_SIZE];
     char* fgetbuf = fgets(buffer, sizeof(buffer), stdin);
 
-    if (fgetbuf == NULL) {
-        printf("[ccli] ==== ERROR\n");
-        printf("[ccli] Failed to get buffer from stdin\n");
-        printf("[ccli] - funcname: ccli_input_str()\n");
-        printf("[ccli] - filename: %s\n", __FILE__);
-        printf("[ccli] - line: %d\n", __LINE__);
-        printf("[ccli] * bufsize: %d\n", CCLI_INPUT_STR_BUFFER_SIZE);
-        exit(-1);
-    }
+    if (fgetbuf == NULL) return CCLI_INPUT_STR_ERROR_FAILED_TO_FGETS_BUFFER_FROM_STDIN;
 
     // change last 'newline' to NULL
     // ['a' 'b' 'c' '\n' '\0'] ==> ['a' 'b' 'c' '\0' '\0']
     buffer[strcspn(buffer, CCLI_INPUT_STR_NEWLINE_STR)] = CCLI_INPUT_STR_ENDLINE_CHAR;
 
-    // copy buffer to out
+    // copy buffer to out & ensure last NULL
     strncpy(out, buffer, size -1);
-
-    // ensure last NULL
     out[size-1] = CCLI_INPUT_STR_ENDLINE_CHAR;
+
+    return CCLI_INPUT_STR_ERROR_NONE;
 }
 
 /*
