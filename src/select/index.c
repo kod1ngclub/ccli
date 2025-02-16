@@ -4,11 +4,11 @@
 #include "stdlib.h"
 #include "stdbool.h"
 
-enum __ccli_select_key__ {
-    __CCLI_SELECT_KEY_NONE__,
-    __CCLI_SELECT_KEY_J__,
-    __CCLI_SELECT_KEY_K__,
-    __CCLI_SELECT_KEY_RETURN__
+enum ccli_select_key {
+    CCLI_SELECT_KEY_NONE,
+    CCLI_SELECT_KEY_J,
+    CCLI_SELECT_KEY_K,
+    CCLI_SELECT_KEY_RETURN
 };
 
 #ifdef _WIN32
@@ -16,27 +16,27 @@ enum __ccli_select_key__ {
 #include <conio.h>
 // <conio.h> has getch()
 
-#define __CCLI_SELECT_KEY_ASCII_J__         (106)
-#define __CCLI_SELECT_KEY_ASCII_K__         (107)
-#define __CCLI_SELECT_KEY_ASCII_RETURN__    (13)
+#define CCLI_SELECT_KEY_ASCII_J         (106)
+#define CCLI_SELECT_KEY_ASCII_K         (107)
+#define CCLI_SELECT_KEY_ASCII_RETURN    (13)
 
-enum __ccli_select_key__ __ccli_select_getch__() {
+enum ccli_select_key ccli_select_getch() {
     int ch = getch();
 
     switch (ch) {
-        case __CCLI_SELECT_KEY_ASCII_J__:
-            return __CCLI_SELECT_KEY_J__;
-        case __CCLI_SELECT_KEY_ASCII_K__:
-            return __CCLI_SELECT_KEY_K__;
-        case __CCLI_SELECT_KEY_ASCII_RETURN__:
-            return __CCLI_SELECT_KEY_RETURN__;
+        case CCLI_SELECT_KEY_ASCII_J:
+            return CCLI_SELECT_KEY_J;
+        case CCLI_SELECT_KEY_ASCII_K:
+            return CCLI_SELECT_KEY_K;
+        case CCLI_SELECT_KEY_ASCII_RETURN:
+            return CCLI_SELECT_KEY_RETURN;
     }
 
-    return __CCLI_SELECT_KEY_NONE__;
+    return CCLI_SELECT_KEY_NONE;
 }
 
 
-static void __ccli_select_clear_line__(int n) {
+static void ccli_select_clear_line(int n) {
     for (int i=0; i<n; i++) {
         printf("\33[1A");
         printf("\33[2K");
@@ -44,20 +44,20 @@ static void __ccli_select_clear_line__(int n) {
     fflush(stdout);
 }
 
-#undef __CCLI_SELECT_KEY_ASCII_J__
-#undef __CCLI_SELECT_KEY_ASCII_K__
-#undef __CCLI_SELECT_KEY_ASCII_RETURN__
+#undef CCLI_SELECT_KEY_ASCII_J
+#undef CCLI_SELECT_KEY_ASCII_K
+#undef CCLI_SELECT_KEY_ASCII_RETURN
 
 #else
 
 #include <termios.h>
 #include <unistd.h>
 
-#define __CCLI_SELECT_KEY_ASCII_J__         (106)
-#define __CCLI_SELECT_KEY_ASCII_K__         (107)
-#define __CCLI_SELECT_KEY_ASCII_RETURN__    (10)
+#define CCLI_SELECT_KEY_ASCII_J         (106)
+#define CCLI_SELECT_KEY_ASCII_K         (107)
+#define CCLI_SELECT_KEY_ASCII_RETURN    (10)
 
-int __ccli_select_getch__(void) {
+int ccli_select_getch(void) {
     struct termios oldt, newt;
     int ch;
 
@@ -75,19 +75,19 @@ int __ccli_select_getch__(void) {
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 
     switch (ch) {
-        case __CCLI_SELECT_KEY_ASCII_J__:
-            return __CCLI_SELECT_KEY_J__;
-        case __CCLI_SELECT_KEY_ASCII_K__:
-            return __CCLI_SELECT_KEY_K__;
-        case __CCLI_SELECT_KEY_ASCII_RETURN__:
-            return __CCLI_SELECT_KEY_RETURN__;
+        case CCLI_SELECT_KEY_ASCII_J:
+            return CCLI_SELECT_KEY_J;
+        case CCLI_SELECT_KEY_ASCII_K:
+            return CCLI_SELECT_KEY_K;
+        case CCLI_SELECT_KEY_ASCII_RETURN:
+            return CCLI_SELECT_KEY_RETURN;
     }
 
-    return __CCLI_SELECT_KEY_NONE__;
+    return CCLI_SELECT_KEY_NONE;
 }
 
 
-static void __ccli_select_clear_line__(int n) {
+static void ccli_select_clear_line(int n) {
     for (int i=0; i<n; i++) {
         printf("\33[1A");
         printf("\33[2K");
@@ -95,13 +95,13 @@ static void __ccli_select_clear_line__(int n) {
     fflush(stdout);
 }
 
-#undef __CCLI_SELECT_KEY_ASCII_J__
-#undef __CCLI_SELECT_KEY_ASCII_K__
-#undef __CCLI_SELECT_KEY_ASCII_RETURN__
+#undef CCLI_SELECT_KEY_ASCII_J
+#undef CCLI_SELECT_KEY_ASCII_K
+#undef CCLI_SELECT_KEY_ASCII_RETURN
 
 #endif
 
-static inline void __ccli_select_print__(
+static inline void ccli_select_print(
     int at,
     const struct ccli_select_option* const opts,
     const size_t size
@@ -120,38 +120,67 @@ unsigned long ccli_select(
     const struct ccli_select_option* const opts,
     const size_t size
 ) {
+    if (message == NULL) {
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'message' cannot be NULL\n");
+        printf("[ccli] - funcname: ccli_select()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
+        exit(-1);
+    }
+
+    if (size == 0) {
+        printf("[ccli] ==== ERROR\n");
+        printf("[ccli] Parameter 'size' cannot be 0\n");
+        printf("[ccli] - funcname: ccli_select()\n");
+        printf("[ccli] - filename: %s\n", __FILE__);
+        printf("[ccli] - line: %d\n", __LINE__);
+        exit(-1);
+    }
+
+    for (int i=0; i<size; i++) {
+        if (opts[i].message == NULL) {
+            printf("[ccli] ==== ERROR\n");
+            printf("[ccli] Parameter 'opts[%d].message' cannot be NULL\n", i);
+            printf("[ccli] - funcname: ccli_select()\n");
+            printf("[ccli] - filename: %s\n", __FILE__);
+            printf("[ccli] - line: %d\n", __LINE__);
+            exit(-1);
+        }
+    }
+
     printf("%s\n", message);
 
     int at = 0;
-    __ccli_select_print__(at, opts, size);
+    ccli_select_print(at, opts, size);
 
     const int select_index_min = 0;
     const int select_index_max = (size-1);
 
     while (true) {
-        switch (__ccli_select_getch__()) {
-            case __CCLI_SELECT_KEY_J__:
+        switch (ccli_select_getch()) {
+            case CCLI_SELECT_KEY_J:
                 if (at == select_index_max) {
                     at = select_index_min;
                 } else {
                     at++;
                 }
                 break;
-            case __CCLI_SELECT_KEY_K__:
+            case CCLI_SELECT_KEY_K:
                 if (at == select_index_min) {
                     at = select_index_max;
                 } else {
                     at--;
                 }
                 break;
-            case __CCLI_SELECT_KEY_RETURN__:
+            case CCLI_SELECT_KEY_RETURN:
                 return opts[at].id;
-            case __CCLI_SELECT_KEY_NONE__:
+            case CCLI_SELECT_KEY_NONE:
                 continue;
         }
 
-        __ccli_select_clear_line__(size);
-        __ccli_select_print__(at, opts, size);
+        ccli_select_clear_line(size);
+        ccli_select_print(at, opts, size);
    }
 
     return 0;

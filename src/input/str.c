@@ -4,9 +4,9 @@
 #include "stdlib.h"
 #include "string.h"
 
-static const char __CCLI_INPUT_STR_NEWLINE_CHAR__ = '\n';
-static const char* const __CCLI_INPUT_STR_NEWLINE_STR__ = "\n";
-static const char __CCLI_INPUT_STR_ENDLINE_CHAR__ = '\0';
+static const char CCLI_INPUT_STR_NEWLINE_CHAR = '\n';
+static const char* const CCLI_INPUT_STR_NEWLINE_STR = "\n";
+static const char CCLI_INPUT_STR_ENDLINE_CHAR = '\0';
 
 void ccli_input_str(
     const char* const message,
@@ -59,13 +59,13 @@ void ccli_input_str(
 
     // change last 'newline' to NULL
     // ['a' 'b' 'c' '\n' '\0'] ==> ['a' 'b' 'c' '\0' '\0']
-    buffer[strcspn(buffer, __CCLI_INPUT_STR_NEWLINE_STR__)] = __CCLI_INPUT_STR_ENDLINE_CHAR__;
+    buffer[strcspn(buffer, CCLI_INPUT_STR_NEWLINE_STR)] = CCLI_INPUT_STR_ENDLINE_CHAR;
 
     // copy buffer to out
     strncpy(out, buffer, size -1);
 
     // ensure last NULL
-    out[size-1] = __CCLI_INPUT_STR_ENDLINE_CHAR__;
+    out[size-1] = CCLI_INPUT_STR_ENDLINE_CHAR;
 }
 
 /*
