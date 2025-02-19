@@ -163,7 +163,8 @@ int ccli_select(
                 }
                 break;
             case CCLI_SELECT_KEY_RETURN:
-                return at;
+                (*cursored) = at;
+                return CCLI_SELECT_ERROR_NONE;
             case CCLI_SELECT_KEY_NONE:
                 continue;
         }
