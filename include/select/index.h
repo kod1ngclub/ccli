@@ -5,11 +5,12 @@
 
 #include "stddef.h"
 
-unsigned long ccli_select(
+int ccli_select(
     const char* const message,
-
     const struct ccli_select_option* const opts,
-    const size_t size
+    const size_t size,
+
+    unsigned long* cursored
 );
 
 #endif // CCLI_SELECT_INDEX_H

@@ -115,38 +115,26 @@ static inline void ccli_select_print(
     }
 }
 
-unsigned long ccli_select(
+static const int CCLI_SELECT_ERROR_NONE                         = 0;
+static const int CCLI_SELECT_ERROR_PARAMETER_MESSAGE_NULL       = 1;
+static const int CCLI_SELECT_ERROR_PARAMETER_MESSAGE_SIZE_ZERO  = 2;
+static const int CCLI_SELECT_ERROR_PARAMETER_OPTS_NULL          = 3;
+static const int CCLI_SELECT_ERROR_PARAMETER_OPTS_MESSAGE_NULL  = 4;
+static const int CCLI_SELECT_ERROR_PARAMETER_ID_PTR_NULL        = 5;
+
+int ccli_select(
     const char* const message,
     const struct ccli_select_option* const opts,
-    const size_t size
+    const size_t size,
+
+    unsigned long* cursored
 ) {
-    if (message == NULL) {
-        printf("[ccli] ==== ERROR\n");
-        printf("[ccli] Parameter 'message' cannot be NULL\n");
-        printf("[ccli] - funcname: ccli_select()\n");
-        printf("[ccli] - filename: %s\n", __FILE__);
-        printf("[ccli] - line: %d\n", __LINE__);
-        exit(-1);
-    }
+    if (message == NULL) return CCLI_SELECT_ERROR_PARAMETER_MESSAGE_NULL;
+    if (size == 0) return CCLI_SELECT_ERROR_PARAMETER_MESSAGE_SIZE_ZERO;
 
-    if (size == 0) {
-        printf("[ccli] ==== ERROR\n");
-        printf("[ccli] Parameter 'size' cannot be 0\n");
-        printf("[ccli] - funcname: ccli_select()\n");
-        printf("[ccli] - filename: %s\n", __FILE__);
-        printf("[ccli] - line: %d\n", __LINE__);
-        exit(-1);
-    }
-
+    if (opts == NULL) return CCLI_SELECT_ERROR_PARAMETER_OPTS_NULL;
     for (int i=0; i<size; i++) {
-        if (opts[i].message == NULL) {
-            printf("[ccli] ==== ERROR\n");
-            printf("[ccli] Parameter 'opts[%d].message' cannot be NULL\n", i);
-            printf("[ccli] - funcname: ccli_select()\n");
-            printf("[ccli] - filename: %s\n", __FILE__);
-            printf("[ccli] - line: %d\n", __LINE__);
-            exit(-1);
-        }
+        if (opts[i].message == NULL) return CCLI_SELECT_ERROR_PARAMETER_OPTS_MESSAGE_NULL;
     }
 
     printf("%s\n", message);
@@ -174,7 +162,7 @@ unsigned long ccli_select(
                 }
                 break;
             case CCLI_SELECT_KEY_RETURN:
-                return opts[at].id;
+                return at;
             case CCLI_SELECT_KEY_NONE:
                 continue;
         }
