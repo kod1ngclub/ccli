@@ -4,6 +4,7 @@
 #include "model/expect.h"
 #include "model/val.h"
 #include "model/flag.h"
+#include "model/stdarg.h"
 
 #include "stdbool.h"
 #include "stddef.h"
