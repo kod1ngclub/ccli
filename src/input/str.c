@@ -5,10 +5,11 @@
 #include "string.h"
 
 static const int CCLI_INPUT_STR_ERROR_NONE                                 = 0;
-static const int CCLI_INPUT_STR_ERROR_PARAMETER_MESSAGE_NULL               = 1;
-static const int CCLI_INPUT_STR_ERROR_PARAMETER_OUT_NULL                   = 2;
-static const int CCLI_INPUT_STR_ERROR_PARAMETER_SIZE_ZERO                  = 3;
-static const int CCLI_INPUT_STR_ERROR_FAILED_TO_FGETS_BUFFER_FROM_STDIN    = 4;
+
+static const int CCLI_INPUT_STR_ERROR_PARAMETER_MESSAGE_NULL               = -1;
+static const int CCLI_INPUT_STR_ERROR_PARAMETER_OUT_NULL                   = -2;
+static const int CCLI_INPUT_STR_ERROR_PARAMETER_SIZE_ZERO                  = -3;
+static const int CCLI_INPUT_STR_ERROR_FAILED_TO_FGETS_BUFFER_FROM_STDIN    = -4;
 
 
 static const char CCLI_INPUT_STR_NEWLINE_CHAR = '\n';

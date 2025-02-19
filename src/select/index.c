@@ -116,11 +116,12 @@ static inline void ccli_select_print(
 }
 
 static const int CCLI_SELECT_ERROR_NONE                         = 0;
-static const int CCLI_SELECT_ERROR_PARAMETER_MESSAGE_NULL       = 1;
-static const int CCLI_SELECT_ERROR_PARAMETER_MESSAGE_SIZE_ZERO  = 2;
-static const int CCLI_SELECT_ERROR_PARAMETER_OPTS_NULL          = 3;
-static const int CCLI_SELECT_ERROR_PARAMETER_OPTS_MESSAGE_NULL  = 4;
-static const int CCLI_SELECT_ERROR_PARAMETER_ID_PTR_NULL        = 5;
+
+static const int CCLI_SELECT_ERROR_PARAMETER_MESSAGE_NULL       = -1;
+static const int CCLI_SELECT_ERROR_PARAMETER_MESSAGE_SIZE_ZERO  = -2;
+static const int CCLI_SELECT_ERROR_PARAMETER_OPTS_NULL          = -3;
+static const int CCLI_SELECT_ERROR_PARAMETER_OPTS_MESSAGE_NULL  = -4;
+static const int CCLI_SELECT_ERROR_PARAMETER_ID_PTR_NULL        = -5;
 
 int ccli_select(
     const char* const message,

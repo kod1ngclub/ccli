@@ -4,10 +4,11 @@
 #include "stdlib.h"
 
 static const int CCLI_INPUT_CHAR_ERROR_NONE                                 = 0;
-static const int CCLI_INPUT_CHAR_ERROR_PARAMETER_MESSAGE_NULL               = 1;
-static const int CCLI_INPUT_CHAR_ERROR_PARAMETER_OUT_NULL                   = 2;
-static const int CCLI_INPUT_CHAR_ERROR_FAILED_TO_FGETS_BUFFER_FROM_STDIN    = 3;
-static const int CCLI_INPUT_CHAR_ERROR_FAILED_TO_SSCANF_CHAR_FROM_BUFFER    = 4;
+
+static const int CCLI_INPUT_CHAR_ERROR_PARAMETER_MESSAGE_NULL               = -1;
+static const int CCLI_INPUT_CHAR_ERROR_PARAMETER_OUT_NULL                   = -2;
+static const int CCLI_INPUT_CHAR_ERROR_FAILED_TO_FGETS_BUFFER_FROM_STDIN    = -3;
+static const int CCLI_INPUT_CHAR_ERROR_FAILED_TO_SSCANF_CHAR_FROM_BUFFER    = -4;
 
 
 int ccli_input_char(const char* const message, char* const out) {
