@@ -6,7 +6,7 @@
 
 #include "stddef.h"
 
-bool ccli_expect_has(
+int ccli_expect_has(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset* const sets,

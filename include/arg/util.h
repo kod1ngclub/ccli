@@ -9,20 +9,20 @@
 #include "stddef.h"
 
 // ==== util of func expect_eq
-bool ccli_expect_eq1(
+int ccli_expect_eq1(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1
 );
 
-bool ccli_expect_eq2(
+int ccli_expect_eq2(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
     const struct ccli_expectset s2
 );
 
-bool ccli_expect_eq3(
+int ccli_expect_eq3(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
@@ -30,7 +30,7 @@ bool ccli_expect_eq3(
     const struct ccli_expectset s3
 );
 
-bool ccli_expect_eq4(
+int ccli_expect_eq4(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
@@ -39,7 +39,7 @@ bool ccli_expect_eq4(
     const struct ccli_expectset s4
 );
 
-bool ccli_expect_eq5(
+int ccli_expect_eq5(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
@@ -49,7 +49,7 @@ bool ccli_expect_eq5(
     const struct ccli_expectset s5
 );
 
-bool ccli_expect_eq6(
+int ccli_expect_eq6(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
@@ -60,7 +60,7 @@ bool ccli_expect_eq6(
     const struct ccli_expectset s6
 );
 
-bool ccli_expect_eq7(
+int ccli_expect_eq7(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
@@ -72,7 +72,7 @@ bool ccli_expect_eq7(
     const struct ccli_expectset s7
 );
 
-bool ccli_expect_eq8(
+int ccli_expect_eq8(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
@@ -86,20 +86,20 @@ bool ccli_expect_eq8(
 );
 
 // ==== utils of func expect_has
-bool ccli_expect_has1(
+int ccli_expect_has1(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1
 );
 
-bool ccli_expect_has2(
+int ccli_expect_has2(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
     const struct ccli_expectset s2
 );
 
-bool ccli_expect_has3(
+int ccli_expect_has3(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
@@ -107,7 +107,7 @@ bool ccli_expect_has3(
     const struct ccli_expectset s3
 );
 
-bool ccli_expect_has4(
+int ccli_expect_has4(
     const struct ccli_stdarg arg,
 
     const struct ccli_expectset s1,
