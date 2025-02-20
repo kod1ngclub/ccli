@@ -118,11 +118,6 @@ int ccli_expect_has4(
 );
 
 // ==== utils for set
-struct ccli_expectset cset(
-    const struct ccli_expect* const expects,
-    const int size
-);
-
 struct ccli_expectset cset1(
     const struct ccli_expect e1
 );
@@ -146,8 +141,6 @@ struct ccli_expectset cset4(
 );
 
 // ==== utils for seq
-struct ccli_expectset cseq(const struct ccli_expect* const expects, const int size);
-
 struct ccli_expectset cseq1(
     const struct ccli_expect e1
 );
