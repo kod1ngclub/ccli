@@ -9,7 +9,7 @@ int ccli_select1(
 
     const struct ccli_select_option opt1,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select2(
@@ -18,7 +18,7 @@ int ccli_select2(
     const struct ccli_select_option opt1,
     const struct ccli_select_option opt2,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select3(
@@ -28,7 +28,7 @@ int ccli_select3(
     const struct ccli_select_option opt2,
     const struct ccli_select_option opt3,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select4(
@@ -39,7 +39,7 @@ int ccli_select4(
     const struct ccli_select_option opt3,
     const struct ccli_select_option opt4,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select5(
@@ -51,7 +51,7 @@ int ccli_select5(
     const struct ccli_select_option opt4,
     const struct ccli_select_option opt5,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select6(
@@ -64,7 +64,7 @@ int ccli_select6(
     const struct ccli_select_option opt5,
     const struct ccli_select_option opt6,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select7(
@@ -78,7 +78,7 @@ int ccli_select7(
     const struct ccli_select_option opt6,
     const struct ccli_select_option opt7,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select8(
@@ -93,7 +93,7 @@ int ccli_select8(
     const struct ccli_select_option opt7,
     const struct ccli_select_option opt8,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select9(
@@ -109,7 +109,7 @@ int ccli_select9(
     const struct ccli_select_option opt8,
     const struct ccli_select_option opt9,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select10(
@@ -126,7 +126,7 @@ int ccli_select10(
     const struct ccli_select_option opt9,
     const struct ccli_select_option opt10,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select11(
@@ -144,7 +144,7 @@ int ccli_select11(
     const struct ccli_select_option opt10,
     const struct ccli_select_option opt11,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select12(
@@ -163,7 +163,7 @@ int ccli_select12(
     const struct ccli_select_option opt11,
     const struct ccli_select_option opt12,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select13(
@@ -183,7 +183,7 @@ int ccli_select13(
     const struct ccli_select_option opt12,
     const struct ccli_select_option opt13,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select14(
@@ -204,7 +204,7 @@ int ccli_select14(
     const struct ccli_select_option opt13,
     const struct ccli_select_option opt14,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select15(
@@ -226,7 +226,7 @@ int ccli_select15(
     const struct ccli_select_option opt14,
     const struct ccli_select_option opt15,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 int ccli_select16(
@@ -249,7 +249,7 @@ int ccli_select16(
     const struct ccli_select_option opt15,
     const struct ccli_select_option opt16,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 );
 
 // ==== util for selection_option

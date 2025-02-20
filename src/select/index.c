@@ -128,7 +128,7 @@ int ccli_select(
     const struct ccli_select_option* const opts,
     const size_t size,
 
-    unsigned long* cursored
+    unsigned long* const cursored
 ) {
     if (message == NULL) return CCLI_SELECT_ERROR_PARAMETER_MESSAGE_NULL;
     if (size == 0) return CCLI_SELECT_ERROR_PARAMETER_MESSAGE_SIZE_ZERO;
